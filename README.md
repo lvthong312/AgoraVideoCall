@@ -22,12 +22,12 @@
 # Guideline
 
 First, could you please clone the project? To do so, you need to run these commands:
-## 1. Clone the project
+### 1. Clone the project
 ```sh
 git clone https://github.com/lvthong312/AgoraVideoCall.git
 ```
 
-## 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands
+### 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands
 
 ```sh
 npm install
@@ -54,7 +54,7 @@ npm install
     <!-- For Android 12 and above devices, the following permission is also required. -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 ```
-## 4. (Important!): Add your Agora APP_ID
+### 4. (Important!): Add your Agora APP_ID
 ```sh
 AgoraVideoCall
 │
@@ -79,7 +79,7 @@ Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]**
     channel: props?.item?.channel,
   };
 
-## 5. How to get APP_ID
+### 5. How to get APP_ID
 > [!Note]
 > If you haven't APP_ID yet. Please follow the steps below: 
 > Step 1: Register an account in [https://www.agora.io/en/](https://www.agora.io/en/)
@@ -87,8 +87,8 @@ Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]**
 > Step 3: click the tab ProjectManagement and copy APP_ID in your project. If you don't have a project let click Create a Project 
 <img width="1420" alt="image" src="https://github.com/user-attachments/assets/0be2ce96-4fe3-442c-ac99-d26fd485682f">
 
-## 6. Run your application
-### For IOS
+### 6. Run your application
+#### For IOS
 ```sh
 1. cd ios && pod install && cd ..
 ```
@@ -96,7 +96,7 @@ Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]**
 2. npx react-native run-ios
 ```
 
-### For Android
+#### For Android
 ```sh
 npx react-native run-android
 ```
