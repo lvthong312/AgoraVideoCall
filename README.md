@@ -81,10 +81,15 @@ Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]**
 
 ### 5. How to get APP_ID
 > [!Note]
+
 > If you haven't APP_ID yet. Please follow the steps below: 
+
 > Step 1: Register an account in [https://www.agora.io/en/](https://www.agora.io/en/)
+
 > Step 2: Go to the Console page of Agora: [https://console.agora.io/](https://console.agora.io/)
+
 > Step 3: click the tab ProjectManagement and copy APP_ID in your project. If you don't have a project let click Create a Project 
+
 <img width="1420" alt="image" src="https://github.com/user-attachments/assets/0be2ce96-4fe3-442c-ac99-d26fd485682f">
 
 ### 6. Run your application
