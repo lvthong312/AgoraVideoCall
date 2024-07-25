@@ -6,7 +6,7 @@ interface IProps {
   index: number,
   onPress: Function
 }
-const ChannelItem = ({ item, index, onPress }: IProps) => {
+const ChannelItem = ({ item, onPress }: IProps) => {
   const onPressItem = () => {
     onPress();
   }
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
   textTitleChannel: { fontWeight: 'bold', fontSize: 16, height: 40 },
   viewUserContainer: { flexDirection: 'row', alignItems: 'center', marginTop: 10 },
   imgUserAvatar: { width: 24, height: 24, marginRight: 4, borderRadius: 16 },
-  textJoinCallTitle: { color: '#f24',  fontWeight: "bold" },
+  textJoinCallTitle: { color: '#f24', fontWeight: "bold" },
   viewJoinCallContainer: { paddingVertical: 4, paddingHorizontal: 4 }
 });

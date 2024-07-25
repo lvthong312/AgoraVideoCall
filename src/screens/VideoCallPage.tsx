@@ -13,7 +13,7 @@ const VideoCallPage = (props: IProps) => {
   const [videoCall, setVideoCall] = useState(true);
   const connectionData: any = {
     appId: Config.APP_ID,
-    channel: props.item.channel,
+    channel: props?.item?.channel,
   };
   const rtcCallbacks = {
     EndCall: () => props.navigation.goBack(),

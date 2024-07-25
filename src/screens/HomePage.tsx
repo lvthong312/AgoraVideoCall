@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useRef } from 'react';
 import withNavigation from '../hocs/withNavigation';
 import { listChannel } from '../utils/fakeData';
 import ChannelItem from '../components/ChannelItem';

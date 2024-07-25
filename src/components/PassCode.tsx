@@ -1,5 +1,5 @@
-import React, { useCallback, useImperativeHandle, useRef, useState } from 'react';
-import { Alert, Modal, StyleSheet, Text, View, TextInput, TouchableOpacity, TextProps } from 'react-native';
+import React, { useImperativeHandle, useRef, useState } from 'react';
+import { Modal, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 interface IProps {
   onSuccessCallback: Function,
   onFailedCallback: Function
