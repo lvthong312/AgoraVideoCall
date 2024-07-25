@@ -1,80 +1,113 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# Intro: 
+   ***List features of the project***: 
+   1. Show list room call 
+   2. Need a passcode to join Room Call
+   3. Video call: 1 - 1 (Person)
+   4. Video call: 1 - n (Person)
+   5. Mute camera
+   6. Mute mic
+   7. Mute remote user camera
+   8. Mute remote user mic
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# Example
+## Go to the link below to see:
+   [https://drive.google.com/drive/folders/1NNzc641uhk26Y8MhbvLmHFolD7_e-XdL?usp=sharing](https://drive.google.com/drive/folders/1NNzc641uhk26Y8MhbvLmHFolD7_e-XdL?usp=sharing)
 
-## Step 1: Start the Metro Server
+## Video Demo:
+   iOS: [https://drive.google.com/file/d/1Rbk8XETdOrYrVDjELVM57nvu6SALeNR5/view?usp=sharing](https://drive.google.com/file/d/1Rbk8XETdOrYrVDjELVM57nvu6SALeNR5/view?usp=sharing)
+   
+   Android: [https://drive.google.com/file/d/1eoD37HDy62xL1lIvXYwnFKRXWU7ad7XV/view?usp=sharing](https://drive.google.com/file/d/1eoD37HDy62xL1lIvXYwnFKRXWU7ad7XV/view?usp=sharing)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+# Guideline React Native
+First, could you please clone the project? To do so, you need to run these commands:
+## 1. Clone the project: 
+```sh
+git clone https://github.com/lvthong312/AgoraVideoCall.git
 ```
 
-## Step 2: Start your Application
+## 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+```sh
+npm install
+```
+### 3. Check the environment for Android and iOS:
+#### IOS: in your project, go to ios/VideoCall/Info.plist and add: 
+```sh
+	<key>NSCameraUsageDescription</key>
+	<string>Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Micro</string>
+```
+#### Android: in your project, go to android/app/src/AndroidManifest.xml and add: 
+```sh
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- For Android 12 and above devices, the following permission is also required. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+```
+## 4. (Important!): Add your Agora APP_ID:
+```sh
+AgoraVideoCall
+│
+├── src
+│   └── screens
+│   │   └── HomePage.tsx
+│   │   └── VideoCall.tsx
+│   └── ...
+└── .env
+│
+└── ....  
+```
+
+Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]***
+
+> ***OR***
+
+> If Android has a black screen, you can go to ***src/screens/VideoCall.tsx*** set directly ***YOUR_APP_ID*** but it's not secure
+
+>  const connectionData: any = {
+    appId: ***[YOUR_APP_ID]***,
+    channel: props?.item?.channel,
+  };
+
+## 5. How to get APP_ID
+> [!Note]
+> If you haven't APP_ID yet. Please follow the steps below: 
+> Step 1: Register an account in [https://www.agora.io/en/](https://www.agora.io/en/)
+> Step 2: Go to the Console page of Agora: [https://console.agora.io/](https://console.agora.io/)
+> Step 3: click the tab ProjectManagement and copy APP_ID in your project. If you don't have a project let click Create a Project 
+<img width="1420" alt="image" src="https://github.com/user-attachments/assets/0be2ce96-4fe3-442c-ac99-d26fd485682f">
+
+## 6. Run your application: 
+### For IOS
+```sh
+1. cd ios && pod install && cd ..
+```
+```sh
+2. npx react-native run-ios
+```
 
 ### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```sh
+npx react-native run-android
 ```
 
-### For iOS
 
-```bash
-# using npm
-npm run ios
+> [!Note]
+> If you haven't set up the React Native environment before. Please see the documentation: [https://reactnative.dev/docs/set-up-your-environment](https://reactnative.dev/docs/set-up-your-environment)
 
-# OR using Yarn
-yarn ios
-```
+> to see Agora documentation: [https://docs.agora.io/en/video-calling/get-started/get-started-sdk?platform=react-native](https://docs.agora.io/en/video-calling/get-started/get-started-sdk?platform=react-native)
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step 3: Modifying your App
 
-Now that you have successfully run the app, let's modify it.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# AgoraVideoCall
