@@ -21,25 +21,25 @@
 
 # Guideline React Native
 First, could you please clone the project? To do so, you need to run these commands:
-## 1. Clone the project: 
+## 1. Clone the project
 ```sh
 git clone https://github.com/lvthong312/AgoraVideoCall.git
 ```
 
-## 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands:
+## 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands
 
 ```sh
 npm install
 ```
-### 3. Check the environment for Android and iOS:
-#### IOS: in your project, go to ios/VideoCall/Info.plist and add: 
+### 3. Check the environment for Android and iOS
+#### IOS: in your project, go to ios/VideoCall/Info.plist and add
 ```sh
 	<key>NSCameraUsageDescription</key>
 	<string>Camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Micro</string>
 ```
-#### Android: in your project, go to android/app/src/AndroidManifest.xml and add: 
+#### Android: in your project, go to android/app/src/AndroidManifest.xml and add
 ```sh
     <uses-permission android:name="android.permission.INTERNET" /> 
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -53,7 +53,7 @@ npm install
     <!-- For Android 12 and above devices, the following permission is also required. -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 ```
-## 4. (Important!): Add your Agora APP_ID:
+## 4. (Important!): Add your Agora APP_ID
 ```sh
 AgoraVideoCall
 │
@@ -86,7 +86,7 @@ Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]**
 > Step 3: click the tab ProjectManagement and copy APP_ID in your project. If you don't have a project let click Create a Project 
 <img width="1420" alt="image" src="https://github.com/user-attachments/assets/0be2ce96-4fe3-442c-ac99-d26fd485682f">
 
-## 6. Run your application: 
+## 6. Run your application
 ### For IOS
 ```sh
 1. cd ios && pod install && cd ..
