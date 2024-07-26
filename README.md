@@ -1,7 +1,7 @@
 
 # Intro
    ***List features of the project***: 
-   1. Show list room call 
+   1. Show list Room Call 
    2. Need a passcode to join Room Call
    3. Video call: 1 - 1 (Person)
    4. Video call: 1 - n (Person)
