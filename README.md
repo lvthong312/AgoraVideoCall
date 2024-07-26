@@ -21,13 +21,13 @@
 
 # Guideline
 
-First, could you please clone the project? To do so, you need to run these commands:
+First, could you please clone the project? To do so, you need to run this command:
 ### 1. Clone the project
 ```sh
 git clone https://github.com/lvthong312/AgoraVideoCall.git
 ```
 
-### 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run these commands
+### 2. Then, you must install the new dependencies in your React Native project. To do so, you need to run this command
 
 ```sh
 npm install
@@ -69,15 +69,6 @@ AgoraVideoCall
 ```
 
 Go to the project find the ***.env*** file and update ***APP_ID =[YOUR_APP_ID]***
-
-> ***OR***
-
-> If Android has a black screen, you can go to ***src/screens/VideoCall.tsx*** set directly ***YOUR_APP_ID*** but it's not secure
-
->  const connectionData: any = {
-    appId: ***[YOUR_APP_ID]***,
-    channel: props?.item?.channel,
-  };
 
 ### 5. How to get APP_ID
 ***If you haven't APP_ID yet. Please follow the steps below:***
